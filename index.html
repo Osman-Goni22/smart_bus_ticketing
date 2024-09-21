@@ -1,11 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Bus Ticketing</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
 </head>
-<body>
-    
+
+<body class=" font-Raleway">
+    <header>
+        <nav class=" lg:container mx-auto">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16m-16 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li><a>Home</a></li>
+                            <li>
+                                <a>About</a>
+
+                            </li>
+                            <li><a>Destination</a></li>
+                            <li><a>Search</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-xl font-bold">P-Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex gap-16">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Home</a></li>
+                        <li>
+                            <a>About</a>
+
+                        </li>
+                        <li><a>Destination</a></li>
+                        <li><a>Search</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn font-bold text-xl text-[#1DD100]">Bus <img src="./images/bus-icon.png" alt=""></a>
+                </div>
+            </div>
+        </nav>
+
+        <div
+            class="bg-[url('images/banner.png')] bg-cover bg-center h-96 container mx-auto flex justify-center items-center">
+
+            <div class=" text-center w-1/2">
+                <h1 class=" text-4xl text-white font-bold">End-to-End Travel With</h1>
+                <h1 class=" text-4xl text-[#1DD100] font-bold mt-4">P Paribahan</h1>
+                <p class=" text-white mt-4 text-lg">Yes, you can run unit tests and view the results directly within the
+                    app. The integrated testing features allow for a streamlined .</p>
+
+                <button class="btn  bg-[#1DD100] border-0 px-8 mt-6 text-lg">Buy Tickets</button>
+            </div>
+        </div>
+
+
+    </header>
+
+
+    <section class=" w-11/12 mx-auto flex">
+        <div class=" w-2/3  ">
+            <p class=" font-semibold text-xl">Select Your Seat</p>
+
+            <div class=" flex justify-between items-center mt-9">
+                <div><i class="fa-solid fa-couch"></i> Available <span id="availableSeat">40</span></div>
+                <div class=" text-green-400"><i class="fa-solid fa-couch"></i> Selected</div>
+
+            </div>
+
+            <div class=" border-b-1 border-dashed"></div>
+
+            <!-- seat section starts here -->
+            <div class=" grid grid-cols-12 mt-9">
+
+                <div class=" col-span-10"> </div>
+                <button class="col-span-2"><img width="40" height="40"
+                        src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/64/external-steering-toys-icongeek26-outline-colour-icongeek26.png"
+                        alt="external-steering-toys-icongeek26-outline-colour-icongeek26" /></button>
+
+                <button class="btn col-span-2 hover:bg-black hover:text-white">A</button>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">A1</button>
+                <div class=" col-span-4"> <button class=" btn w-1/2  hover:bg-black hover:text-white " onclick="seathandler(this)">A2</button></div>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">A3</button>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">A4</button>
+
+
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">B</button>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">B1</button>
+
+                <div class=" col-span-4"> <button class=" btn w-1/2 hover:bg-black hover:text-white" onclick="seathandler(this)">B2</button></div>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">B3</button>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">B4</button>
+
+
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">C</button>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">C1</button>
+                <div class=" col-span-4"> <button class=" btn w-1/2 hover:bg-black hover:text-white" onclick="seathandler(this)">C2</button></div>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">C3</button>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">C4</button>
+
+
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">D</button>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">D1</button>
+                <div class=" col-span-4"> <button class=" btn w-1/2 hover:bg-black hover:text-white " onclick="seathandler(this)">D2</button></div>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">D3</button>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">D4</button>
+
+
+                <button class=" btn col-span-2 hover:bg-black hover:text-white">E</button>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">E1</button>
+                <div class=" col-span-4"> <button class=" btn w-1/2 hover:bg-black hover:text-white" onclick="seathandler(this)">E2</button></div>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">E3</button>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">E4</button>
+
+
+                <button class=" btn col-span-2 hover:bg-black hover:text-white">F</button>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">F1</button>
+                <div class=" col-span-4"> <button class=" btn w-1/2 hover:bg-black hover:text-white" onclick="seathandler(this)">F2</button></div>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">F3</button>
+                <button class=" btn col-span-2 hover:bg-black hover:text-white" onclick="seathandler(this)">F4</button>
+
+
+                <button class=" btn col-span-2  hover:bg-black hover:text-white">G</button>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">G1</button>
+                <div class=" col-span-4"> <button class=" btn w-1/2  hover:bg-black hover:text-white" onclick="seathandler(this)">G2</button></div>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">G3</button>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">G4</button>
+
+
+                <button class=" btn col-span-2  hover:bg-black hover:text-white">H</button>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">H1</button>
+                <div class=" col-span-4"> <button class=" btn w-1/2  hover:bg-black hover:text-white" onclick="seathandler(this)">H2</button></div>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">H3</button>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">H4</button>
+
+
+                <button class=" btn col-span-2  hover:bg-black hover:text-white">I</button>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">I1</button>
+                <div class=" col-span-4"> <button class=" btn w-1/2  hover:bg-black hover:text-white" onclick="seathandler(this)">I2</button></div>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">I3</button>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">I4</button>
+
+
+                <button class=" btn col-span-2  hover:bg-black hover:text-white">J</button>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">J1</button>
+                <div class=" col-span-4"> <button class=" btn w-1/2  hover:bg-black hover:text-white " onclick="seathandler(this)">J2</button></div>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">J3</button>
+                <button class=" btn col-span-2  hover:bg-black hover:text-white" onclick="seathandler(this)">J4</button>
+
+
+
+            </div>
+        </div>
+
+        <div class=" w-1/3 bg-green-300   p-5">
+            <p class=" text-lg font-semibold mb-4">
+                Select Your Seat.
+            </p>
+            <h3 class=" flex justify-between">
+                <p>
+                    <span class=" text-lg">Seat</span>
+                    <button class="btn btn-sm rounded-full" id="seatNumber">0</button>
+                </p>
+
+                <p>Class</p>
+
+                <p>Price</p>
+            </h3>
+
+
+            <ul class="spy-5 text-center " id="seatConatiner">
+                <h3 class=" text-3xl font-semibold text-error capitalize" id="text">No seat booked</h3>
+            </ul>
+
+            <div class=" text-lg font font-semibold flex justify-between mt-10">
+                <p class=" text-white">Total Amount</p>
+                <p class=" text-white">
+                    <span>BDT:</span>
+                    <span id="taka">0</span>
+                </p>
+            </div>
+
+
+            <div class=" mt-10">
+                <input type="text" placeholder=" Have a Coupon?" class=" py-3 px-5 rounded-lg bg-gray-300">
+                <button class=" btn text-lg " id="applyButton" disabled>
+                    Apply
+                </button>
+            </div>
+
+
+            <div class=" text-lg font font-semibold flex justify-between mt-10">
+                <p class=" text-white">Grand Total</p>
+                <p class=" text-white">
+                    <span>BDT:</span>
+                    <span id="grandMoney">0</span>
+                </p>
+            </div>
+
+            <div class=" mt-10">
+                <label for="" class=" font-bold">Passenger Name*</label> <br> <br>
+
+                <input type="text" placeholder="Enter Your Name" class="input input-bordered input-accent w-full max-w-xs" />
+                <br> <br>
+                <label for="" class=" font-bold">Passenger phone*</label> <br> <br>
+
+                <input type="text" placeholder="Enter Your Phone" class="input input-bordered input-accent w-full max-w-xs" /> <br> <br>
+
+
+                <label for="" class=" font-bold">Passenger Email*</label> <br> <br>
+
+                <input type="text" placeholder="Enter Your Email ID" class="input input-bordered input-accent w-full max-w-xs" />
+                <br> <br>
+
+                <button class="btn w-3/4">NEXT</button>
+            </div>
+
+
+        </div>
+    </section>
+
+
+<script src="js/index.js"></script>
 </body>
+
 </html>
